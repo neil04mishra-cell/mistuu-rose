@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Mistuu ❤️</title>  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      overflow-x: hidden;
+      color: white;
+      text-align: center;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 30px;
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      max-width: 500px;
+      line-height: 1.6;
+    }
+
+    /* Intro cinematic */
+    .intro {
+      background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    }
+
+    .heart {
+      font-size: 90px;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%,100%{transform:scale(1);}50%{transform:scale(1.2);} }
+
+    /* Typing animation */
+    .typing {
+      border-right: 3px solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 4s steps(40) 1s forwards, blink .8s infinite;
+      width: 0;
+    }
+
+    @keyframes typing {
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Rose shower */
+    .rose {
+      position: fixed;
+      top: -40px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      to { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    /* Final message */
+    .final {
+      background: linear-gradient(135deg, #ff4e50, #f9d423);
+    }
+
+    .big {
+      font-size: 60px;
+      margin: 20px 0;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px white; }
+      to { text-shadow: 0 0 25px pink; }
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-size: 22px;
+      opacity: 0.9;
+    }
+
+  </style></head>
+<body><!-- Cinematic Intro --><section class="intro">
+  <div class="heart">❤️</div>
+  <h1 class="typing">Someone very special is about to see this...</h1>
+</section><!-- Rose Day Section --><section>
+  <h1>Happy Rose Day Mistuu 🌹</h1>
+  <p>You walked into my life and suddenly everything felt right.</p>
+</section><!-- Romantic Lines --><section>
+  <h2>Things I feel for you…</h2>
+  <p id="line">You are my calm in chaos.</p>
+</section><!-- Final Cinematic Ending --><section class="final">
+  <h1 class="big">I Love You Mistuu ❤️</h1>
+  <p>You are not just my love… you are my home.</p>
+  <div class="signature">– From Neil ❤️</div>
+</section><!-- Music --><audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio><script>
+
+// Romantic lines rotation
+const lines=[
+"You are my calm in chaos.",
+"Your smile is my favorite place.",
+"Life feels softer with you in it.",
+"You are my today and every tomorrow.",
+"I found love when I found you."
+];
+let i=0;
+setInterval(()=>{
+ i=(i+1)%lines.length;
+ document.getElementById('line').innerText=lines[i];
+},3000);
+
+// Rose shower cinematic
+function createRose(){
+ const r=document.createElement('div');
+ r.classList.add('rose');
+ r.innerHTML='🌹';
+ r.style.left=Math.random()*100+'vw';
+ r.style.animationDuration=(3+Math.random()*4)+'s';
+ document.body.appendChild(r);
+ setTimeout(()=>{r.remove();},7000);
+}
+setInterval(createRose,250);
+
+</script></body>
+</html>
